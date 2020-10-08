@@ -1,0 +1,188 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    <title>Amazing Python Project:#3</title>
+
+    <script>
+
+        function copy(){
+         var text = document.getElementById("copyArea");
+         text.select();
+         document.execCommand("copy");
+       }
+       
+       </script>
+
+</head>
+<body>
+    
+
+    <header class="text-gray-700 body-font">
+        <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+          <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
+          
+           <span class="ml-3 text-4xl">🙇K14-coder!</span>
+          </a>
+          <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
+            
+            <a href="index.html" class="mr-5 hover:text-gray-900">HOME</a>
+            <a href="https://www.youtube.com/channel/UC63OnuRj1bNVG2EOKNUks2Q?view_as=subscriber" class="mr-5 hover:text-gray-900">Youtube</a>
+            
+          </nav>
+          <a href="5h.html"
+          <button class="inline-flex items-center bg-gray-200 border-0 py-1 px-3 focus:outline-none hover:bg-gray-300 rounded text-base mt-4 md:mt-0">Explore More
+            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-1" viewBox="0 0 24 24">
+              <path d="M5 12h14M12 5l7 7-7 7"></path>
+            </svg>
+          </button>
+        </a>
+        </div>
+      </header>
+    
+      <section class="text-gray-700 body-font relative">
+        <div class="container px-5 py-24 mx-auto">
+          <div class="flex flex-col text-center w-full mb-12">
+            <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">Amazing Python Project: #3</h1>
+            <p class="lg:w-2/3 mx-auto leading-relaxed text-base">Here, is the source code of that project, click! on "Copy button" to copy it.</p>
+          </div>
+          <div class="lg:w-1/2 md:w-2/3 mx-auto">
+            <div class="flex flex-wrap -m-2">
+              <div class="p-2 w-1/2">
+                
+              </div>
+              <div class="p-2 w-1/2">
+                
+              </div>
+              <div class="p-2 w-full">
+                <textarea id="copyArea" wrap="off" readonly class="w-full bg-gray-100 rounded border border-gray-400 focus:outline-none h-48 focus:border-indigo-500 text-base px-4 py-2 resize-none block">from tkinter import *
+                    from tkinter import ttk
+                    
+                    ###---Bascice GUI setup---####
+                    
+                    root=Tk()
+                    root.geometry("755x500")
+                    root.config(bg="white")
+                    root.title("G-bro")
+                    root.resizable(FALSE,FALSE)
+                    
+                    root.wm_iconbitmap("google-logo.ico")
+                    
+                    
+                    ####-----------Frame working-----------####
+                    
+                    search=Frame(root,background="white")
+                    search.place(x=0,y=0,width=750,height=500)
+                    
+                    showResult=Frame(root,background="white")
+                    showResult.place(x=0,y=0,width=750,height=800)
+                    
+                    def show(frame):
+                        frame.tkraise()
+                    
+                    
+                    ###---Styling buttons--###
+                    
+                    style = ttk.Style()
+                    
+                    style.map("C.TButton",
+                    foreground=[('pressed', 'green'), ('active', 'blue')],
+                    background=[('pressed', '!disabled', 'black'), ('active', 'result_div')])
+                    
+                    style.configure('TButton', font=('century gothic', 10),
+                    boderwidth='1')
+                    
+                    ####---Showe result---####
+                    
+                    tit = Label(showResult, font=('century gothic' 'bold', 18), bg = "white" )
+                    tit.place(x = 10, y = 10)
+                    
+                    back = ttk.Button(showResult, text="Go back", style="C.TButton")
+                    back.place(x = 600, y= 40)
+                    
+                    answer = Text(showResult, foreground ='blue', font=('century gothic' , 13), width = 80, height = 19 )
+                    answer.place(x= 10, y = 100)
+                    
+                    ####----MAin IMage---#####
+                    
+                    canvas = Canvas(search, width = 565, height = 250, bg = "white")
+                    canvas.place(x = 98, y = 0)
+                    
+                    photo = PhotoImage(file= 'apna3.png')
+                    canvas.create_image(0, 0, anchor = NW, image=photo)
+                    
+                    ####---Search box---###
+                    
+                    searchBox =  ttk.Entry(search, width=25, font = ("courier", 23))
+                    searchBox.place(x = 143, y = 250)
+                    
+                    ####-----Search button---###
+                    
+                    btn = ttk.Button(search, text="Go", style="C.TButton")
+                    btn.place( x = 294, y = 300)
+                    
+                    ###--Menu Bar---###
+                    menubar = Menu(root)
+                    
+                    m1 = Menu(menubar, tearoff= 0)
+                    
+                    m1.add_command(label = "Hello ! Subscriber ")
+                    m1.add_separator()
+                    m1.add_command(label = "Hello ! Subscriber ")
+                    m1.add_command(label = "Hello ! Subscriber ")
+                    
+                    root.config(menu=menubar)
+                    menubar.add_cascade(label = "YOUTUBE ", menu = m1)
+                    
+                    show(search)
+                    
+                    root.mainloop()
+                    
+                    
+                    
+                    
+                    
+                     </textarea>
+              </div>
+              <div class="p-2 w-full">
+                <button id="btnCopy" class="flex mx-auto text-white bg-teal-500 border-0 py-2 px-8 focus:outline-none hover:bg-teal-600 rounded text-lg" onclick="copy()">Copy!</button>
+              </div>
+              
+              
+            </div>
+          </div>
+        </div>
+      </section>
+    
+      
+      <footer class="text-gray-700 body-font">
+        <div class="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
+          <a class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
+            
+            <span class="ml-3 text-xl">🙇K14-coder!</span>
+          </a>
+          <p class="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">© 2020-2021 K14-coder! —
+            <a href="https://www.instagram.com/d_little_coder" class="text-gray-600 ml-1" rel="noopener noreferrer" target="_blank">@d_little_coder</a>
+          </p>
+          
+            
+            <a href="https://www.instagram.com/d_little_coder" class="ml-3 text-gray-500">
+              <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                <rect width="20" height="20" x="1" y="2" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
+              </svg>
+            </a>
+            
+              </svg>
+            </a>
+          </span>
+        </div>
+    </footer>
+
+
+
+</body>
+</html>
