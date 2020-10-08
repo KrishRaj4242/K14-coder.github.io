@@ -59,88 +59,93 @@
               </div>
               <div class="p-2 w-full">
                 <textarea id="copyArea" wrap="off" readonly class="w-full bg-gray-100 rounded border border-gray-400 focus:outline-none h-48 focus:border-indigo-500 text-base px-4 py-2 resize-none block">
-                    from tkinter import *
-                    from tkinter import ttk
+from tkinter import *
+from tkinter import ttk
+
+###---Bascice GUI setup---####
+
+root=Tk()
+root.geometry("755x500")
+root.config(bg="white")
+root.title("G-bro")
+root.resizable(FALSE,FALSE)
+
+root.wm_iconbitmap("google-logo.ico")
+
+
+####-----------Frame working-----------####
+
+search=Frame(root,background="white")
+search.place(x=0,y=0,width=750,height=500)
+
+showResult=Frame(root,background="white")
+showResult.place(x=0,y=0,width=750,height=800)
+
+def show(frame):
+    frame.tkraise()
+
+
+###---Styling buttons--###
+
+style = ttk.Style()
+
+style.map("C.TButton",
+foreground=[('pressed', 'green'), ('active', 'blue')],
+background=[('pressed', '!disabled', 'black'), ('active', 'result_div')])
+
+style.configure('TButton', font=('century gothic', 10),
+boderwidth='1')
+
+####---Showe result---####
+
+tit = Label(showResult, font=('century gothic' 'bold', 18), bg = "white" )
+tit.place(x = 10, y = 10)
+
+back = ttk.Button(showResult, text="Go back", style="C.TButton")
+back.place(x = 600, y= 40)
+
+answer = Text(showResult, foreground ='blue', font=('century gothic' , 13), width = 80, height = 19 )
+answer.place(x= 10, y = 100)
+
+####----MAin IMage---#####
+
+canvas = Canvas(search, width = 565, height = 250, bg = "white")
+canvas.place(x = 98, y = 0)
+
+photo = PhotoImage(file= 'apna3.png')
+canvas.create_image(0, 0, anchor = NW, image=photo)
+
+####---Search box---###
+
+searchBox =  ttk.Entry(search, width=25, font = ("courier", 23))
+searchBox.place(x = 143, y = 250)
+
+####-----Search button---###
+
+btn = ttk.Button(search, text="Go", style="C.TButton")
+btn.place( x = 294, y = 300)
+
+###--Menu Bar---###
+menubar = Menu(root)
+
+m1 = Menu(menubar, tearoff= 0)
+
+m1.add_command(label = "Hello ! Subscriber ")
+m1.add_separator()
+m1.add_command(label = "Hello ! Subscriber ")
+m1.add_command(label = "Hello ! Subscriber ")
+
+root.config(menu=menubar)
+menubar.add_cascade(label = "YOUTUBE ", menu = m1)
+
+show(search)
+
+root.mainloop()
+
+
+
                     
-                    ###---Bascice GUI setup---####
                     
-                    root=Tk()
-                    root.geometry("755x500")
-                    root.config(bg="white")
-                    root.title("G-bro")
-                    root.resizable(FALSE,FALSE)
-                    
-                    root.wm_iconbitmap("google-logo.ico")
-                    
-                    
-                    ####-----------Frame working-----------####
-                    
-                    search=Frame(root,background="white")
-                    search.place(x=0,y=0,width=750,height=500)
-                    
-                    showResult=Frame(root,background="white")
-                    showResult.place(x=0,y=0,width=750,height=800)
-                    
-                    def show(frame):
-                        frame.tkraise()
-                    
-                    
-                    ###---Styling buttons--###
-                    
-                    style = ttk.Style()
-                    
-                    style.map("C.TButton",
-                    foreground=[('pressed', 'green'), ('active', 'blue')],
-                    background=[('pressed', '!disabled', 'black'), ('active', 'result_div')])
-                    
-                    style.configure('TButton', font=('century gothic', 10),
-                    boderwidth='1')
-                    
-                    ####---Showe result---####
-                    
-                    tit = Label(showResult, font=('century gothic' 'bold', 18), bg = "white" )
-                    tit.place(x = 10, y = 10)
-                    
-                    back = ttk.Button(showResult, text="Go back", style="C.TButton")
-                    back.place(x = 600, y= 40)
-                    
-                    answer = Text(showResult, foreground ='blue', font=('century gothic' , 13), width = 80, height = 19 )
-                    answer.place(x= 10, y = 100)
-                    
-                    ####----MAin IMage---#####
-                    
-                    canvas = Canvas(search, width = 565, height = 250, bg = "white")
-                    canvas.place(x = 98, y = 0)
-                    
-                    photo = PhotoImage(file= 'apna3.png')
-                    canvas.create_image(0, 0, anchor = NW, image=photo)
-                    
-                    ####---Search box---###
-                    
-                    searchBox =  ttk.Entry(search, width=25, font = ("courier", 23))
-                    searchBox.place(x = 143, y = 250)
-                    
-                    ####-----Search button---###
-                    
-                    btn = ttk.Button(search, text="Go", style="C.TButton")
-                    btn.place( x = 294, y = 300)
-                    
-                    ###--Menu Bar---###
-                    menubar = Menu(root)
-                    
-                    m1 = Menu(menubar, tearoff= 0)
-                    
-                    m1.add_command(label = "Hello ! Subscriber ")
-                    m1.add_separator()
-                    m1.add_command(label = "Hello ! Subscriber ")
-                    m1.add_command(label = "Hello ! Subscriber ")
-                    
-                    root.config(menu=menubar)
-                    menubar.add_cascade(label = "YOUTUBE ", menu = m1)
-                    
-                    show(search)
-                    
-                    root.mainloop()
                     
                     
                     
